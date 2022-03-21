@@ -7,7 +7,9 @@ use protobuf_codegen::Codegen;
 use protobuf_test_common::build::*;
 
 fn test_protoc_bin_path() -> PathBuf {
-    protoc_bin_vendored::protoc_bin_path().unwrap()
+    let mut path = PathBuf::new();
+    path.push("protoc");
+    path
 }
 
 fn codegen() -> Codegen {
